@@ -1,9 +1,0 @@
-1. Seven Segments LEDs are active low (1 means off, 0 means on)
-
-2. The push buttons are active LOW (gives 0 when pressed)
-
-3. Sequential versus combinational logic:
-   > Process behaves as the process are executed sequentially.
-   > Process can describe combinational logic, provided all the inputs are in the sensitivity list.
-
-4. if...then...elsif...endif, case...is...when, can't be used outside of a process
