@@ -1,0 +1,55 @@
+-- Your Names:  Linqiao (James) Liu; Henry Hao Yan
+-- Your Student Numbers: 39140116; 59057159
+-- Your Lab Section:  L1B
+
+
+-- Lab 1 Challenge Task (with Reset!)
+-- You should add your code to this file below.  
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity COUNTER is
+  port (
+    --KEY[1] is reset, KEY[0] is the "clock"
+    KEY: in std_logic_vector (1 downto 0);
+    --The output 7-segments LED display
+    HEX0: out std_logic_vector (6 downto 0));
+end entity;
+
+architecture BEHAVIOURAL of COUNTER is
+  component converter is
+    port(	SW : in std_logic_vector(2 downto 0);  
+			HEX0 : out std_logic_vector(6 downto 0)); 
+	end component;
+	
+	constant INIT: std_logic_vector(2 downto 0):= "000";
+	constant INCREMENT: std_logic_vector(2 downto 0):= "001";
+	signal counter: std_logic_vector(2 downto 0):= INIT;
+	signal clk: std_logic;
+	signal reset: std_logic;
+	
+	 
+	 begin
+	   DISPLAY: CONVERTER
+	    port map 
+	      (SW=>counter, HEX0=>HEX0);
+	    
+	    clk <= not KEY(0);
+	    reset <= not KEY(1);
+	    
+	    --state machine with synchornous reset)
+	    process (clk)
+	      begin
+	      if (clk'event and clk ='1') then
+	         if (reset = '1') then
+	           counter <= "000";
+	           else
+	            counter <=counter + INCREMENT;
+	         end if;
+	       end if;
+	   end process;
+end architecture;
+	   

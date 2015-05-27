@@ -1,0 +1,1602 @@
+TimeQuest Timing Analyzer report for lab2_count
+Thu May 21 13:28:00 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock_50'
+ 12. Slow Model Setup: 'FreqDivider:TIMER|counter[25]'
+ 13. Slow Model Hold: 'clock_50'
+ 14. Slow Model Hold: 'FreqDivider:TIMER|counter[25]'
+ 15. Slow Model Minimum Pulse Width: 'clock_50'
+ 16. Slow Model Minimum Pulse Width: 'FreqDivider:TIMER|counter[25]'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'clock_50'
+ 27. Fast Model Setup: 'FreqDivider:TIMER|counter[25]'
+ 28. Fast Model Hold: 'clock_50'
+ 29. Fast Model Hold: 'FreqDivider:TIMER|counter[25]'
+ 30. Fast Model Minimum Pulse Width: 'clock_50'
+ 31. Fast Model Minimum Pulse Width: 'FreqDivider:TIMER|counter[25]'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab2_count                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                       ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; Clock Name                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                           ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; clock_50                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock_50 }                      ;
+; FreqDivider:TIMER|counter[25] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FreqDivider:TIMER|counter[25] } ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+
+
++---------------------------------------------------------------------+
+; Slow Model Fmax Summary                                             ;
++------------+-----------------+-------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
++------------+-----------------+-------------------------------+------+
+; 285.47 MHz ; 285.47 MHz      ; clock_50                      ;      ;
+; 491.88 MHz ; 491.88 MHz      ; FreqDivider:TIMER|counter[25] ;      ;
++------------+-----------------+-------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Slow Model Setup Summary                               ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -2.503 ; -37.959       ;
+; FreqDivider:TIMER|counter[25] ; -1.033 ; -3.966        ;
++-------------------------------+--------+---------------+
+
+
++--------------------------------------------------------+
+; Slow Model Hold Summary                                ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -2.114 ; -2.114        ;
+; FreqDivider:TIMER|counter[25] ; 0.391  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                 ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -1.380 ; -27.380       ;
+; FreqDivider:TIMER|counter[25] ; -0.500 ; -16.000       ;
++-------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock_50'                                                                                                                 ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.503 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.540      ;
+; -2.432 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.469      ;
+; -2.361 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.398      ;
+; -2.326 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.363      ;
+; -2.290 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.327      ;
+; -2.287 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.324      ;
+; -2.255 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.292      ;
+; -2.249 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.286      ;
+; -2.219 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.256      ;
+; -2.216 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.253      ;
+; -2.184 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.221      ;
+; -2.178 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.215      ;
+; -2.145 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.182      ;
+; -2.113 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.150      ;
+; -2.107 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.144      ;
+; -2.096 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.133      ;
+; -2.075 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.112      ;
+; -2.074 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.111      ;
+; -2.060 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.097      ;
+; -2.042 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.079      ;
+; -2.036 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.073      ;
+; -2.025 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.062      ;
+; -2.004 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.041      ;
+; -2.003 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.040      ;
+; -1.989 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.026      ;
+; -1.965 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 3.002      ;
+; -1.954 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.991      ;
+; -1.953 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.990      ;
+; -1.933 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.970      ;
+; -1.918 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.955      ;
+; -1.883 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.920      ;
+; -1.883 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.920      ;
+; -1.882 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.919      ;
+; -1.862 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.899      ;
+; -1.847 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.884      ;
+; -1.847 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.884      ;
+; -1.844 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.881      ;
+; -1.812 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.849      ;
+; -1.812 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.849      ;
+; -1.811 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.848      ;
+; -1.811 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.848      ;
+; -1.806 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.843      ;
+; -1.791 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.828      ;
+; -1.776 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.813      ;
+; -1.776 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.813      ;
+; -1.773 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.810      ;
+; -1.741 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.778      ;
+; -1.740 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.777      ;
+; -1.740 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.777      ;
+; -1.735 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.772      ;
+; -1.706 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.743      ;
+; -1.705 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.742      ;
+; -1.705 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.742      ;
+; -1.702 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.739      ;
+; -1.670 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.707      ;
+; -1.669 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.706      ;
+; -1.669 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.706      ;
+; -1.664 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.701      ;
+; -1.653 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.690      ;
+; -1.635 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.672      ;
+; -1.634 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.671      ;
+; -1.634 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.671      ;
+; -1.632 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.669      ;
+; -1.631 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.668      ;
+; -1.599 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.636      ;
+; -1.598 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.635      ;
+; -1.593 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.630      ;
+; -1.582 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.619      ;
+; -1.568 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.605      ;
+; -1.564 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.601      ;
+; -1.563 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[13] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.600      ;
+; -1.563 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.600      ;
+; -1.561 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.598      ;
+; -1.560 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.597      ;
+; -1.528 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.565      ;
+; -1.527 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.564      ;
+; -1.522 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.559      ;
+; -1.511 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.548      ;
+; -1.510 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.547      ;
+; -1.497 ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.534      ;
+; -1.497 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.534      ;
+; -1.493 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.530      ;
+; -1.490 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.527      ;
+; -1.489 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.526      ;
+; -1.457 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.494      ;
+; -1.451 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.488      ;
+; -1.443 ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.480      ;
+; -1.440 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.477      ;
+; -1.439 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.476      ;
+; -1.426 ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.463      ;
+; -1.426 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.463      ;
+; -1.422 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.459      ;
+; -1.419 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.456      ;
+; -1.418 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[12] ; clock_50     ; clock_50    ; 1.000        ; 0.000      ; 2.454      ;
+; -1.418 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.455      ;
+; -1.404 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.441      ;
+; -1.386 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[13] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.423      ;
+; -1.380 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.417      ;
+; -1.372 ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.409      ;
+; -1.369 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 2.406      ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'FreqDivider:TIMER|counter[25]'                                                                                                                               ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; -1.033 ; count[0]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 2.069      ;
+; -1.018 ; count[0]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 2.054      ;
+; -0.993 ; count[1]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 2.029      ;
+; -0.882 ; count[2]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.918      ;
+; -0.851 ; count[3]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.887      ;
+; -0.766 ; count[3]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.802      ;
+; -0.764 ; count[3]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.800      ;
+; -0.739 ; count[0]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.775      ;
+; -0.663 ; count[1]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.699      ;
+; -0.629 ; count[4]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.665      ;
+; -0.627 ; count[4]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.663      ;
+; -0.626 ; count[4]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.662      ;
+; -0.572 ; count[0]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.608      ;
+; -0.532 ; count[1]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.568      ;
+; -0.501 ; count[0]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.537      ;
+; -0.494 ; count[2]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.530      ;
+; -0.492 ; count[2]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.528      ;
+; -0.461 ; count[1]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.497      ;
+; -0.421 ; count[2]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.457      ;
+; -0.210 ; count[1]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.246      ;
+; -0.075 ; count[3]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.111      ;
+; -0.044 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.080      ;
+; -0.038 ; count[2]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.074      ;
+; -0.034 ; lab2_FSM:FSM|current_state.R5 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 1.070      ;
+; 0.099  ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.937      ;
+; 0.102  ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.934      ;
+; 0.104  ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.932      ;
+; 0.104  ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.932      ;
+; 0.227  ; lab2_FSM:FSM|current_state.R3 ; lab2_FSM:FSM|current_state.R4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.809      ;
+; 0.231  ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.805      ;
+; 0.232  ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.804      ;
+; 0.233  ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.803      ;
+; 0.235  ; lab2_FSM:FSM|current_state.R0 ; lab2_FSM:FSM|current_state.R1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.801      ;
+; 0.235  ; lab2_FSM:FSM|current_state.R4 ; lab2_FSM:FSM|current_state.R5 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.801      ;
+; 0.236  ; lab2_FSM:FSM|current_state.R2 ; lab2_FSM:FSM|current_state.R3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.800      ;
+; 0.237  ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.799      ;
+; 0.240  ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.796      ;
+; 0.247  ; lab2_FSM:FSM|current_state.R1 ; lab2_FSM:FSM|current_state.R2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.789      ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock_50'                                                                                                                                   ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; -2.114 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; clock_50    ; 0.000        ; 2.702      ; 1.104      ;
+; -1.614 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; clock_50    ; -0.500       ; 2.702      ; 1.104      ;
+; 0.391  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[0]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.788  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.054      ;
+; 0.788  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.054      ;
+; 0.791  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[1]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.057      ;
+; 0.794  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.060      ;
+; 0.795  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.798  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.799  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; FreqDivider:TIMER|counter[24] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.821  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.087      ;
+; 0.831  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.097      ;
+; 0.832  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.832  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.971  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.237      ;
+; 0.971  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.237      ;
+; 0.972  ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.238      ;
+; 0.972  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.238      ;
+; 1.003  ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[1]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.269      ;
+; 1.171  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.437      ;
+; 1.174  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.440      ;
+; 1.177  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.443      ;
+; 1.178  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.444      ;
+; 1.181  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.447      ;
+; 1.182  ; FreqDivider:TIMER|counter[24] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.448      ;
+; 1.207  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.473      ;
+; 1.217  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.218  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.484      ;
+; 1.218  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.484      ;
+; 1.242  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.508      ;
+; 1.245  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.511      ;
+; 1.248  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.514      ;
+; 1.249  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.515      ;
+; 1.252  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.518      ;
+; 1.253  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.519      ;
+; 1.263  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.529      ;
+; 1.273  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.540      ;
+; 1.274  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.540      ;
+; 1.278  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.544      ;
+; 1.288  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.554      ;
+; 1.289  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.555      ;
+; 1.313  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.579      ;
+; 1.316  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.582      ;
+; 1.319  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.585      ;
+; 1.320  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.586      ;
+; 1.323  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.589      ;
+; 1.324  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.590      ;
+; 1.327  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.594      ;
+; 1.334  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.600      ;
+; 1.344  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.611      ;
+; 1.345  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.611      ;
+; 1.354  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.620      ;
+; 1.354  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.620      ;
+; 1.355  ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.621      ;
+; 1.355  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.621      ;
+; 1.359  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.625      ;
+; 1.377  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.643      ;
+; 1.384  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.650      ;
+; 1.390  ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.656      ;
+; 1.390  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.656      ;
+; 1.391  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.657      ;
+; 1.394  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.660      ;
+; 1.395  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.661      ;
+; 1.398  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.665      ;
+; 1.398  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.665      ;
+; 1.405  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.671      ;
+; 1.415  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 1.682      ;
+; 1.416  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.682      ;
+; 1.425  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.691      ;
+; 1.425  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.691      ;
+; 1.426  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.692      ;
+; 1.430  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.696      ;
+; 1.430  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.696      ;
+; 1.437  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.703      ;
+; 1.448  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.714      ;
+; 1.448  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 1.714      ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'FreqDivider:TIMER|counter[25]'                                                                                                                               ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; 0.391 ; count[1]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.523 ; lab2_FSM:FSM|current_state.R1 ; lab2_FSM:FSM|current_state.R2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.789      ;
+; 0.530 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.796      ;
+; 0.533 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.799      ;
+; 0.534 ; lab2_FSM:FSM|current_state.R2 ; lab2_FSM:FSM|current_state.R3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.800      ;
+; 0.535 ; lab2_FSM:FSM|current_state.R0 ; lab2_FSM:FSM|current_state.R1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.801      ;
+; 0.535 ; lab2_FSM:FSM|current_state.R4 ; lab2_FSM:FSM|current_state.R5 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.801      ;
+; 0.537 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.803      ;
+; 0.538 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.804      ;
+; 0.539 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.805      ;
+; 0.543 ; lab2_FSM:FSM|current_state.R3 ; lab2_FSM:FSM|current_state.R4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.809      ;
+; 0.666 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.932      ;
+; 0.666 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.932      ;
+; 0.668 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.934      ;
+; 0.671 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.937      ;
+; 0.804 ; lab2_FSM:FSM|current_state.R5 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.070      ;
+; 0.808 ; count[2]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.074      ;
+; 0.814 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.080      ;
+; 0.845 ; count[3]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.111      ;
+; 0.979 ; count[1]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.245      ;
+; 0.980 ; count[1]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.246      ;
+; 1.191 ; count[2]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.457      ;
+; 1.204 ; count[4]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.470      ;
+; 1.217 ; count[0]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.483      ;
+; 1.231 ; count[1]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.497      ;
+; 1.261 ; count[2]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.527      ;
+; 1.262 ; count[2]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.528      ;
+; 1.264 ; count[2]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.530      ;
+; 1.271 ; count[0]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.537      ;
+; 1.302 ; count[1]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.568      ;
+; 1.342 ; count[0]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.608      ;
+; 1.397 ; count[4]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.663      ;
+; 1.399 ; count[4]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.665      ;
+; 1.508 ; count[0]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.774      ;
+; 1.511 ; count[0]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.777      ;
+; 1.533 ; count[3]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.799      ;
+; 1.534 ; count[3]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.800      ;
+; 1.536 ; count[3]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 1.802      ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock_50'                                                                        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock_50 ; Rise       ; clock_50                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[19]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[19]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[20]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[20]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[21]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[21]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[22]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[22]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[23]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[23]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[24]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[24]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[25]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[25]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[7]|clk          ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'FreqDivider:TIMER|counter[25]'                                                                        ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                         ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R4 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R5 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R5 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S4 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; TIMER|counter[25]|regout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; TIMER|counter[25]|regout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|datab                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|datab                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|inclk[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|inclk[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|outclk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|outclk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]|clk                  ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; -0.709 ; -0.709 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; -0.709 ; -0.709 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                             ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; 0.968 ; 0.968 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; 0.968 ; 0.968 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                       ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 15.011 ; 15.011 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 14.250 ; 14.250 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 13.832 ; 13.832 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 13.546 ; 13.546 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 15.011 ; 15.011 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 12.472 ; 12.472 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 12.980 ; 12.980 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 13.850 ; 13.850 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 11.269 ; 11.269 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 9.202  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 14.147 ; 14.147 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 9.590  ; 9.590  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 9.411  ; 9.411  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 9.590  ; 9.590  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 8.470  ; 8.470  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 9.171  ; 9.171  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 8.238  ; 8.238  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 3.685  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 4.952  ; 4.952  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 4.946  ; 4.946  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 4.926  ; 4.926  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 4.729  ; 4.729  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 4.737  ; 4.737  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 8.238  ; 8.238  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;        ; 9.202  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                               ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 8.502  ; 8.502  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 10.400 ; 10.400 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 11.443 ; 11.443 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 9.643  ; 9.643  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 10.819 ; 10.819 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 9.850  ; 9.850  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 9.972  ; 9.972  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 9.683  ; 9.683  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 8.502  ; 8.502  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 9.202  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 9.980  ; 9.980  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 8.189  ; 8.189  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 8.419  ; 8.419  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 8.310  ; 8.310  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 8.190  ; 8.190  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 8.189  ; 8.189  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 3.685  ; 4.729  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 3.685  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 4.952  ; 4.952  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 4.946  ; 4.946  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 4.926  ; 4.926  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 4.729  ; 4.729  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 4.737  ; 4.737  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 7.375  ; 7.375  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;        ; 9.202  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------+
+; Fast Model Setup Summary                               ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -0.680 ; -5.888        ;
+; FreqDivider:TIMER|counter[25] ; 0.106  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
++--------------------------------------------------------+
+; Fast Model Hold Summary                                ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -1.446 ; -1.446        ;
+; FreqDivider:TIMER|counter[25] ; 0.215  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                 ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clock_50                      ; -1.380 ; -27.380       ;
+; FreqDivider:TIMER|counter[25] ; -0.500 ; -16.000       ;
++-------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock_50'                                                                                                                 ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.680 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.713      ;
+; -0.645 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.678      ;
+; -0.610 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.643      ;
+; -0.598 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.631      ;
+; -0.587 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.620      ;
+; -0.575 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.608      ;
+; -0.564 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.597      ;
+; -0.563 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.596      ;
+; -0.552 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.585      ;
+; -0.540 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.573      ;
+; -0.529 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.562      ;
+; -0.528 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.561      ;
+; -0.517 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.550      ;
+; -0.494 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.527      ;
+; -0.493 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.526      ;
+; -0.482 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.515      ;
+; -0.477 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.510      ;
+; -0.467 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.500      ;
+; -0.459 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.492      ;
+; -0.458 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.491      ;
+; -0.447 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.480      ;
+; -0.446 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.479      ;
+; -0.442 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.475      ;
+; -0.432 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.465      ;
+; -0.424 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.457      ;
+; -0.411 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.444      ;
+; -0.407 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.440      ;
+; -0.398 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.431      ;
+; -0.397 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.430      ;
+; -0.376 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.372 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.405      ;
+; -0.364 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.397      ;
+; -0.363 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.396      ;
+; -0.362 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.395      ;
+; -0.354 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.387      ;
+; -0.353 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.386      ;
+; -0.341 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.374      ;
+; -0.337 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.370      ;
+; -0.330 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.363      ;
+; -0.329 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.362      ;
+; -0.328 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.361      ;
+; -0.328 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.361      ;
+; -0.327 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.360      ;
+; -0.319 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.352      ;
+; -0.318 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.351      ;
+; -0.306 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.339      ;
+; -0.295 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.294 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.327      ;
+; -0.293 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.326      ;
+; -0.293 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.326      ;
+; -0.284 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.317      ;
+; -0.284 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.317      ;
+; -0.283 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.316      ;
+; -0.271 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.304      ;
+; -0.260 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.293      ;
+; -0.259 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.292      ;
+; -0.258 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.291      ;
+; -0.258 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.291      ;
+; -0.249 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.282      ;
+; -0.249 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.282      ;
+; -0.248 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.281      ;
+; -0.243 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.276      ;
+; -0.236 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.269      ;
+; -0.233 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.266      ;
+; -0.225 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.258      ;
+; -0.224 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.257      ;
+; -0.223 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.256      ;
+; -0.217 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.250      ;
+; -0.214 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.247      ;
+; -0.214 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.247      ;
+; -0.213 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.246      ;
+; -0.208 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.241      ;
+; -0.201 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[13] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.234      ;
+; -0.198 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.231      ;
+; -0.190 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[16] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.223      ;
+; -0.189 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.222      ;
+; -0.188 ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.221      ;
+; -0.182 ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.215      ;
+; -0.182 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.215      ;
+; -0.179 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.212      ;
+; -0.178 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.211      ;
+; -0.173 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.164 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.197      ;
+; -0.163 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[18] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.196      ;
+; -0.155 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[15] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.188      ;
+; -0.154 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.187      ;
+; -0.147 ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[24] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.180      ;
+; -0.147 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.180      ;
+; -0.144 ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[21] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.177      ;
+; -0.143 ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.176      ;
+; -0.142 ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[25] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.175      ;
+; -0.138 ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.171      ;
+; -0.129 ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[19] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.162      ;
+; -0.128 ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[17] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.161      ;
+; -0.120 ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[20] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.153      ;
+; -0.120 ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[14] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.153      ;
+; -0.119 ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[13] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.152      ;
+; -0.115 ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[12] ; clock_50     ; clock_50    ; 1.000        ; 0.000      ; 1.147      ;
+; -0.112 ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[23] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.145      ;
+; -0.112 ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[22] ; clock_50     ; clock_50    ; 1.000        ; 0.001      ; 1.145      ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'FreqDivider:TIMER|counter[25]'                                                                                                                              ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; 0.106 ; count[0]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.926      ;
+; 0.122 ; count[0]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.910      ;
+; 0.133 ; count[1]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.899      ;
+; 0.184 ; count[2]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.848      ;
+; 0.196 ; count[3]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.836      ;
+; 0.197 ; count[3]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.835      ;
+; 0.199 ; count[3]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.833      ;
+; 0.204 ; count[0]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.828      ;
+; 0.251 ; count[4]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.781      ;
+; 0.252 ; count[4]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.780      ;
+; 0.254 ; count[1]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.778      ;
+; 0.254 ; count[4]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.778      ;
+; 0.302 ; count[0]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.730      ;
+; 0.327 ; count[2]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.705      ;
+; 0.328 ; count[2]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.704      ;
+; 0.329 ; count[1]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.703      ;
+; 0.337 ; count[0]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.695      ;
+; 0.364 ; count[1]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.668      ;
+; 0.380 ; count[2]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.652      ;
+; 0.427 ; count[1]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.605      ;
+; 0.505 ; count[3]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.527      ;
+; 0.513 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.519      ;
+; 0.518 ; count[2]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.514      ;
+; 0.520 ; lab2_FSM:FSM|current_state.R5 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.512      ;
+; 0.577 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.455      ;
+; 0.581 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.451      ;
+; 0.583 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.449      ;
+; 0.583 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.449      ;
+; 0.614 ; lab2_FSM:FSM|current_state.R0 ; lab2_FSM:FSM|current_state.R1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.418      ;
+; 0.629 ; lab2_FSM:FSM|current_state.R3 ; lab2_FSM:FSM|current_state.R4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.403      ;
+; 0.631 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.401      ;
+; 0.633 ; lab2_FSM:FSM|current_state.R4 ; lab2_FSM:FSM|current_state.R5 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.399      ;
+; 0.633 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.399      ;
+; 0.633 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.399      ;
+; 0.633 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.399      ;
+; 0.634 ; lab2_FSM:FSM|current_state.R2 ; lab2_FSM:FSM|current_state.R3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.398      ;
+; 0.637 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.395      ;
+; 0.640 ; lab2_FSM:FSM|current_state.R1 ; lab2_FSM:FSM|current_state.R2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 1.000        ; 0.000      ; 0.392      ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock_50'                                                                                                                                   ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; -1.446 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; clock_50    ; 0.000        ; 1.677      ; 0.524      ;
+; -0.946 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; clock_50    ; -0.500       ; 1.677      ; 0.524      ;
+; 0.215  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[0]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.353  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.505      ;
+; 0.354  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.506      ;
+; 0.356  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[1]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; FreqDivider:TIMER|counter[24] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.365  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.369  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.434  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.586      ;
+; 0.435  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.587      ;
+; 0.435  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.587      ;
+; 0.436  ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.588      ;
+; 0.446  ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[1]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.598      ;
+; 0.491  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.643      ;
+; 0.493  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.494  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.495  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496  ; FreqDivider:TIMER|counter[24] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.505  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.509  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.526  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.678      ;
+; 0.528  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.529  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.530  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.682      ;
+; 0.531  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.532  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.540  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.692      ;
+; 0.543  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.696      ;
+; 0.544  ; FreqDivider:TIMER|counter[23] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545  ; FreqDivider:TIMER|counter[18] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.547  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.552  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.561  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[16] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.713      ;
+; 0.563  ; FreqDivider:TIMER|counter[0]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.715      ;
+; 0.564  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.565  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566  ; FreqDivider:TIMER|counter[22] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567  ; FreqDivider:TIMER|counter[17] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.719      ;
+; 0.572  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.724      ;
+; 0.573  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[8]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.725      ;
+; 0.573  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.725      ;
+; 0.574  ; FreqDivider:TIMER|counter[3]  ; FreqDivider:TIMER|counter[4]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.726      ;
+; 0.578  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.731      ;
+; 0.579  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[24] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.582  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[6]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.734      ;
+; 0.583  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.736      ;
+; 0.586  ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[2]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.738      ;
+; 0.587  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[22] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.739      ;
+; 0.596  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[17] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.748      ;
+; 0.599  ; FreqDivider:TIMER|counter[6]  ; FreqDivider:TIMER|counter[10] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.751      ;
+; 0.599  ; FreqDivider:TIMER|counter[8]  ; FreqDivider:TIMER|counter[12] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.751      ;
+; 0.600  ; FreqDivider:TIMER|counter[14] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.752      ;
+; 0.601  ; FreqDivider:TIMER|counter[15] ; FreqDivider:TIMER|counter[19] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.604  ; FreqDivider:TIMER|counter[19] ; FreqDivider:TIMER|counter[21] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.756      ;
+; 0.607  ; FreqDivider:TIMER|counter[5]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.759      ;
+; 0.608  ; FreqDivider:TIMER|counter[7]  ; FreqDivider:TIMER|counter[9]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.760      ;
+; 0.608  ; FreqDivider:TIMER|counter[9]  ; FreqDivider:TIMER|counter[11] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.760      ;
+; 0.613  ; FreqDivider:TIMER|counter[12] ; FreqDivider:TIMER|counter[15] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.766      ;
+; 0.614  ; FreqDivider:TIMER|counter[21] ; FreqDivider:TIMER|counter[25] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614  ; FreqDivider:TIMER|counter[16] ; FreqDivider:TIMER|counter[20] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.617  ; FreqDivider:TIMER|counter[4]  ; FreqDivider:TIMER|counter[7]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.769      ;
+; 0.618  ; FreqDivider:TIMER|counter[11] ; FreqDivider:TIMER|counter[14] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.771      ;
+; 0.618  ; FreqDivider:TIMER|counter[10] ; FreqDivider:TIMER|counter[13] ; clock_50                      ; clock_50    ; 0.000        ; 0.001      ; 0.771      ;
+; 0.621  ; FreqDivider:TIMER|counter[1]  ; FreqDivider:TIMER|counter[3]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.773      ;
+; 0.622  ; FreqDivider:TIMER|counter[20] ; FreqDivider:TIMER|counter[23] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.774      ;
+; 0.631  ; FreqDivider:TIMER|counter[13] ; FreqDivider:TIMER|counter[18] ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.634  ; FreqDivider:TIMER|counter[2]  ; FreqDivider:TIMER|counter[5]  ; clock_50                      ; clock_50    ; 0.000        ; 0.000      ; 0.786      ;
++--------+-------------------------------+-------------------------------+-------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'FreqDivider:TIMER|counter[25]'                                                                                                                               ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; 0.215 ; count[1]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; lab2_FSM:FSM|current_state.R1 ; lab2_FSM:FSM|current_state.R2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.392      ;
+; 0.243 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.395      ;
+; 0.246 ; lab2_FSM:FSM|current_state.R2 ; lab2_FSM:FSM|current_state.R3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247 ; lab2_FSM:FSM|current_state.S3 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; lab2_FSM:FSM|current_state.R4 ; lab2_FSM:FSM|current_state.R5 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.399      ;
+; 0.249 ; lab2_FSM:FSM|current_state.S4 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.401      ;
+; 0.251 ; lab2_FSM:FSM|current_state.R3 ; lab2_FSM:FSM|current_state.R4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.403      ;
+; 0.266 ; lab2_FSM:FSM|current_state.R0 ; lab2_FSM:FSM|current_state.R1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.418      ;
+; 0.297 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S2 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.449      ;
+; 0.297 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S1 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.449      ;
+; 0.299 ; lab2_FSM:FSM|current_state.S1 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.451      ;
+; 0.303 ; lab2_FSM:FSM|current_state.S2 ; lab2_FSM:FSM|current_state.S3 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.455      ;
+; 0.360 ; lab2_FSM:FSM|current_state.R5 ; lab2_FSM:FSM|current_state.S0 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.512      ;
+; 0.362 ; count[2]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.514      ;
+; 0.367 ; lab2_FSM:FSM|current_state.S0 ; lab2_FSM:FSM|current_state.S4 ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.519      ;
+; 0.375 ; count[3]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.527      ;
+; 0.452 ; count[1]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.604      ;
+; 0.453 ; count[1]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.605      ;
+; 0.500 ; count[2]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.652      ;
+; 0.516 ; count[1]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.528 ; count[4]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.680      ;
+; 0.538 ; count[0]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.690      ;
+; 0.543 ; count[0]                      ; count[2]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.695      ;
+; 0.550 ; count[2]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.702      ;
+; 0.551 ; count[1]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.703      ;
+; 0.552 ; count[2]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.704      ;
+; 0.553 ; count[2]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.705      ;
+; 0.578 ; count[0]                      ; count[3]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.730      ;
+; 0.628 ; count[4]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.780      ;
+; 0.629 ; count[4]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.781      ;
+; 0.674 ; count[0]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.826      ;
+; 0.676 ; count[3]                      ; count[4]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.828      ;
+; 0.677 ; count[0]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.829      ;
+; 0.683 ; count[3]                      ; count[0]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.835      ;
+; 0.684 ; count[3]                      ; count[1]                      ; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 0.000        ; 0.000      ; 0.836      ;
++-------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock_50'                                                                        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock_50 ; Rise       ; clock_50                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock_50 ; Rise       ; FreqDivider:TIMER|counter[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[19]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[19]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[20]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[20]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[21]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[21]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[22]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[22]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[23]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[23]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[24]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[24]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[25]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[25]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50 ; Rise       ; TIMER|counter[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50 ; Rise       ; TIMER|counter[7]|clk          ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'FreqDivider:TIMER|counter[25]'                                                                        ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                         ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R4 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R5 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.R5 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; lab2_FSM:FSM|current_state.S4 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.R5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; FSM|current_state.S4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; TIMER|counter[25]|regout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; TIMER|counter[25]|regout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|datab                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b|datab                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|inclk[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|inclk[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|outclk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; clk_b~clkctrl|outclk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; FreqDivider:TIMER|counter[25] ; Rise       ; count[4]|clk                  ;
++--------+--------------+----------------+------------------+-------------------------------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; -0.551 ; -0.551 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; -0.551 ; -0.551 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                             ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; 0.679 ; 0.679 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; 0.679 ; 0.679 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                     ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 7.494 ; 7.494 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 7.317 ; 7.317 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 7.106 ; 7.106 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 6.901 ; 6.901 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 7.494 ; 7.494 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 6.441 ; 6.441 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 6.698 ; 6.698 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 7.052 ; 7.052 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 5.969 ; 5.969 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 4.618 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 7.189 ; 7.189 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 5.002 ; 5.002 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 4.925 ; 4.925 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 5.002 ; 5.002 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 4.537 ; 4.537 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 4.850 ; 4.850 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 4.127 ; 4.127 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 1.972 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 2.666 ; 2.666 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 2.650 ; 2.650 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 2.638 ; 2.638 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 2.562 ; 2.562 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 2.568 ; 2.568 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 4.127 ; 4.127 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;       ; 4.618 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                             ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 4.417 ; 4.417 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 5.266 ; 5.266 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 5.719 ; 5.719 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 4.867 ; 4.867 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 5.347 ; 5.347 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 4.945 ; 4.945 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 5.016 ; 5.016 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 4.888 ; 4.888 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 4.417 ; 4.417 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 4.618 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 5.025 ; 5.025 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 4.506 ; 4.506 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 4.466 ; 4.466 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 1.972 ; 2.562 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 1.972 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 2.666 ; 2.666 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 2.650 ; 2.650 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 2.638 ; 2.638 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 2.562 ; 2.562 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 2.568 ; 2.568 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 3.741 ; 3.741 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;       ; 4.618 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                          ;
++--------------------------------+---------+--------+----------+---------+---------------------+
+; Clock                          ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack               ; -2.503  ; -2.114 ; N/A      ; N/A     ; -1.380              ;
+;  FreqDivider:TIMER|counter[25] ; -1.033  ; 0.215  ; N/A      ; N/A     ; -0.500              ;
+;  clock_50                      ; -2.503  ; -2.114 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS                ; -41.925 ; -2.114 ; 0.0      ; 0.0     ; -43.38              ;
+;  FreqDivider:TIMER|counter[25] ; -3.966  ; 0.000  ; N/A      ; N/A     ; -16.000             ;
+;  clock_50                      ; -37.959 ; -2.114 ; N/A      ; N/A     ; -27.380             ;
++--------------------------------+---------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; -0.551 ; -0.551 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; -0.551 ; -0.551 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                             ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; sw[*]     ; FreqDivider:TIMER|counter[25] ; 0.968 ; 0.968 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  sw[0]    ; FreqDivider:TIMER|counter[25] ; 0.968 ; 0.968 ; Rise       ; FreqDivider:TIMER|counter[25] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                       ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 15.011 ; 15.011 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 14.250 ; 14.250 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 13.832 ; 13.832 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 13.546 ; 13.546 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 15.011 ; 15.011 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 12.472 ; 12.472 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 12.980 ; 12.980 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 13.850 ; 13.850 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 11.269 ; 11.269 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 9.202  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 14.147 ; 14.147 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 9.590  ; 9.590  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 9.411  ; 9.411  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 9.590  ; 9.590  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 8.470  ; 8.470  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 9.171  ; 9.171  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 8.238  ; 8.238  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 3.685  ;        ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 4.952  ; 4.952  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 4.946  ; 4.946  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 4.926  ; 4.926  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 4.729  ; 4.729  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 4.737  ; 4.737  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 8.238  ; 8.238  ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;        ; 9.202  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;        ; 3.685  ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                             ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port    ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+; lcd_data[*]  ; FreqDivider:TIMER|counter[25] ; 4.417 ; 4.417 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[0] ; FreqDivider:TIMER|counter[25] ; 5.266 ; 5.266 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[1] ; FreqDivider:TIMER|counter[25] ; 5.719 ; 5.719 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[2] ; FreqDivider:TIMER|counter[25] ; 4.867 ; 4.867 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[3] ; FreqDivider:TIMER|counter[25] ; 5.347 ; 5.347 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[4] ; FreqDivider:TIMER|counter[25] ; 4.945 ; 4.945 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[5] ; FreqDivider:TIMER|counter[25] ; 5.016 ; 5.016 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[6] ; FreqDivider:TIMER|counter[25] ; 4.888 ; 4.888 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  lcd_data[7] ; FreqDivider:TIMER|counter[25] ; 4.417 ; 4.417 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ; 4.618 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_rs       ; FreqDivider:TIMER|counter[25] ; 5.025 ; 5.025 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledg[*]      ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[0]     ; FreqDivider:TIMER|counter[25] ; 4.506 ; 4.506 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[1]     ; FreqDivider:TIMER|counter[25] ; 4.466 ; 4.466 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[2]     ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledg[3]     ; FreqDivider:TIMER|counter[25] ; 4.393 ; 4.393 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ; 1.972 ; 2.562 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ; 1.972 ;       ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[1]     ; FreqDivider:TIMER|counter[25] ; 2.666 ; 2.666 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[2]     ; FreqDivider:TIMER|counter[25] ; 2.650 ; 2.650 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[3]     ; FreqDivider:TIMER|counter[25] ; 2.638 ; 2.638 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[4]     ; FreqDivider:TIMER|counter[25] ; 2.562 ; 2.562 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[5]     ; FreqDivider:TIMER|counter[25] ; 2.568 ; 2.568 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[17]    ; FreqDivider:TIMER|counter[25] ; 3.741 ; 3.741 ; Rise       ; FreqDivider:TIMER|counter[25] ;
+; lcd_en       ; FreqDivider:TIMER|counter[25] ;       ; 4.618 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+; ledr[*]      ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
+;  ledr[0]     ; FreqDivider:TIMER|counter[25] ;       ; 1.972 ; Fall       ; FreqDivider:TIMER|counter[25] ;
++--------------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                           ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; clock_50                      ; clock_50                      ; 350      ; 0        ; 0        ; 0        ;
+; FreqDivider:TIMER|counter[25] ; clock_50                      ; 1        ; 1        ; 0        ; 0        ;
+; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 46       ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                            ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; clock_50                      ; clock_50                      ; 350      ; 0        ; 0        ; 0        ;
+; FreqDivider:TIMER|counter[25] ; clock_50                      ; 1        ; 1        ; 0        ; 0        ;
+; FreqDivider:TIMER|counter[25] ; FreqDivider:TIMER|counter[25] ; 46       ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 21    ; 21   ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 111   ; 111  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu May 21 13:27:59 2015
+Info: Command: quartus_sta lab2_count -c lab2_count
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab2_count.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock_50 clock_50
+    Info (332105): create_clock -period 1.000 -name FreqDivider:TIMER|counter[25] FreqDivider:TIMER|counter[25]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.503
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.503       -37.959 clock_50 
+    Info (332119):    -1.033        -3.966 FreqDivider:TIMER|counter[25] 
+Info (332146): Worst-case hold slack is -2.114
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.114        -2.114 clock_50 
+    Info (332119):     0.391         0.000 FreqDivider:TIMER|counter[25] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -27.380 clock_50 
+    Info (332119):    -0.500       -16.000 FreqDivider:TIMER|counter[25] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.680
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.680        -5.888 clock_50 
+    Info (332119):     0.106         0.000 FreqDivider:TIMER|counter[25] 
+Info (332146): Worst-case hold slack is -1.446
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.446        -1.446 clock_50 
+    Info (332119):     0.215         0.000 FreqDivider:TIMER|counter[25] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -27.380 clock_50 
+    Info (332119):    -0.500       -16.000 FreqDivider:TIMER|counter[25] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 402 megabytes
+    Info: Processing ended: Thu May 21 13:28:00 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

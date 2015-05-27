@@ -1,0 +1,77 @@
+|lab2
+key[0] => lcd_en.DATAIN
+key[0] => lab2_FSM:FSM.clk
+key[1] => ~NO_FANOUT~
+key[2] => ~NO_FANOUT~
+key[3] => lab2_FSM:FSM.reset
+sw[0] => lab2_FSM:FSM.dir
+sw[1] => ~NO_FANOUT~
+sw[2] => ~NO_FANOUT~
+sw[3] => ~NO_FANOUT~
+sw[4] => ~NO_FANOUT~
+sw[5] => ~NO_FANOUT~
+sw[6] => ~NO_FANOUT~
+sw[7] => ~NO_FANOUT~
+sw[8] => ~NO_FANOUT~
+ledg[0] <= lab2_FSM:FSM.state_out[0]
+ledg[1] <= lab2_FSM:FSM.state_out[1]
+ledg[2] <= lab2_FSM:FSM.state_out[2]
+ledg[3] <= lab2_FSM:FSM.state_out[3]
+ledg[4] <= lab2_FSM:FSM.state_out[4]
+ledg[5] <= lab2_FSM:FSM.state_out[5]
+ledg[6] <= lab2_FSM:FSM.state_out[6]
+ledg[7] <= lab2_FSM:FSM.state_out[7]
+lcd_rw <= <GND>
+lcd_en <= key[0].DB_MAX_OUTPUT_PORT_TYPE
+lcd_rs <= lab2_FSM:FSM.lcd_rs
+lcd_on <= <VCC>
+lcd_blon <= <VCC>
+lcd_data[0] <= lab2_FSM:FSM.data[0]
+lcd_data[1] <= lab2_FSM:FSM.data[1]
+lcd_data[2] <= lab2_FSM:FSM.data[2]
+lcd_data[3] <= lab2_FSM:FSM.data[3]
+lcd_data[4] <= lab2_FSM:FSM.data[4]
+lcd_data[5] <= lab2_FSM:FSM.data[5]
+lcd_data[6] <= lab2_FSM:FSM.data[6]
+lcd_data[7] <= lab2_FSM:FSM.data[7]
+hex0[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+hex0[1] <= hex0[1].DB_MAX_OUTPUT_PORT_TYPE
+hex0[2] <= hex0[2].DB_MAX_OUTPUT_PORT_TYPE
+hex0[3] <= hex0[3].DB_MAX_OUTPUT_PORT_TYPE
+hex0[4] <= hex0[4].DB_MAX_OUTPUT_PORT_TYPE
+hex0[5] <= hex0[5].DB_MAX_OUTPUT_PORT_TYPE
+hex0[6] <= hex0[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2|lab2_FSM:FSM
+clk => current_state~1.DATAIN
+reset => current_state~3.DATAIN
+dir => Selector0.IN4
+dir => Selector1.IN3
+dir => Selector2.IN3
+dir => Selector3.IN3
+dir => Selector4.IN3
+dir => Selector0.IN2
+dir => Selector1.IN1
+dir => Selector2.IN1
+dir => Selector3.IN1
+dir => Selector4.IN1
+lcd_rs <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+state_out[0] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+state_out[1] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
+state_out[2] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+state_out[3] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+state_out[4] <= <GND>
+state_out[5] <= <GND>
+state_out[6] <= <GND>
+state_out[7] <= <GND>
+
+
