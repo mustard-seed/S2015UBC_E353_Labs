@@ -1,0 +1,38 @@
+I. Data Path
+  inputs: clock, reset, deal, dealTo, dealToCardSlot
+  outputs: dealerStands, dealerWins, playerWins, dealerBust, playerBust, playerCards (record), dealerCards (record)
+  Subcomponents:
+  > DealCard x 8
+  > ScoreHand x 2
+  
+  DealCard
+  -- Samples a fast counting clock to generate pseudo-random number from 0 to 13. With a register to buffer output.
+  
+   inputs: enable, clock, reset
+   outputs: countSample
+  
+  output changes synchornously and detect rise in enable signal between successive clock cycles
+   
+  ScoreHand
+  -- Computer the total score of cards from a hand
+  inputs: slots (array of unsigned)
+  output: score
+
+ Plan: 
+  > Instantiate components in DataPath
+  > 
+
+II. Card7Seg
+  input: Card (array of unsigned)
+  output: display_signal (std_logic_vector)
+
+Plan for May 28:
+0.  Make top-level for DataPath. Instantiate lower level components. (Done)
+1.  Make Card7Seg. Test on simulator, test on DE2.
+    (Henry is working on it)
+
+2.  Make DealCard. Test on simulator. Test on DE2 with Card7Seg. Use KEY0 and enable signal
+
+3.  Make ScoreHand. Test on simulator
+
+4.  Complete DataPath by adding additional logic. Test on simulator. Test on DE2.
