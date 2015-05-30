@@ -106,13 +106,13 @@ BEGIN
   END GENERATE GEN_D_DEAL;
   
   -- Evalue the enable values for the Card Dealer
-  EVAL_DEAL_ENABLE: PROCESS (dealTo, dealToCardSlot)
+  EVAL_DEAL_ENABLE: PROCESS (dealTo, dealToCardSlot, deal)
   BEGIN
     FOR i IN dealEnable'RANGE LOOP
       -- Check for equality
       -- Cannot assign a BOOLEAN, directly to dealEnable(i), a STD_LOGIC. 
       -- Hence must use the following IF...THEN...ELSE statement
-      IF UNSIGNED(dealTo & dealToCardSlot) = DealEnableTresh(i) THEN
+      IF UNSIGNED ((dealTo & dealToCardSlot) = DealEnableTresh(i) AND deal = '1') THEN
          dealEnable(i) <= '1';
       ELSE
         dealEnable(i) <='0';
