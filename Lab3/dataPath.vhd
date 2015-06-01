@@ -86,7 +86,7 @@ ARCHITECTURE Behavioural OF DataPath IS
       card4: IN UNSIGNED (3 downto 0);
       score: OUT UNSIGNED (4 downto 0)
     );
-END COMPONENT;    
+  END COMPONENT;    
   
 BEGIN
   -- Instantiate DealCards for Dealer
