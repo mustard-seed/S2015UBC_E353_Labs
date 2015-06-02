@@ -27,17 +27,17 @@ BEGIN
   PROCESS (clock)
    --The fast counter 
     VARIABLE count: UNSIGNED (3 downto 0) := "0000";
-    --VARIABLE enableVar: STD_LOGIC := '0';
-    --VARIABLE enableVar_prev: STD_LOGIC := enableVar;
+    VARIABLE enableVar: STD_LOGIC := '0';
+    VARIABLE enableVar_prev: STD_LOGIC := enableVar;
   BEGIN
     IF rising_edge(clock) THEN
-      --enableVar := enable;
-      count := count+1;
+      enableVar := enable;
+      count := count+"0001";
       
       --If count goes beyone 13, wrap back to 0;
       --enableVar := enable;
       IF count = "1110"  THEN
-          count := "0000";
+          count := "0001";
       END IF;
       --Sync. Reset
       IF reset = '1' THEN
@@ -45,11 +45,11 @@ BEGIN
           count := "0000";
           --enableVar := '0';
       --Update output
-      ELSIF ((enable /= enable'last_value) AND (enable = '1')) THEN
-      --ELSIF ((enableVar /= enableVar_prev) AND (enableVar = '1')) THEN
+      --Wrong: ELSIF ((enable /= enable'last_value) AND (enable = '1')) THEN
+      ELSIF ((enableVar /= enableVar_prev) AND (enableVar = '1')) THEN
           countSample <= count;
       END IF;
-      --enableVar_prev := enableVar;
+      enableVar_prev := enableVar;
     END IF;
   END PROCESS;
   

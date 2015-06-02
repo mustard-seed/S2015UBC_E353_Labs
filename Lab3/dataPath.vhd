@@ -44,7 +44,7 @@ ARCHITECTURE Behavioural OF DataPath IS
   CONSTANT dealerStandTresh: unsigned(4 downto 0) := "10001";
   
   -- Bust Treshold. Participant goes bust if his score >= 22; Score forced to 31
-  CONSTANT bustTresh: unsigned(4 downto 0) := "10110";
+  CONSTANT bustTresh: unsigned(4 downto 0) := "11111";
   
   
   -- Define the enable values for the DealCard instances
@@ -112,7 +112,7 @@ BEGIN
       -- Check for equality
       -- Cannot assign a BOOLEAN, directly to dealEnable(i), a STD_LOGIC. 
       -- Hence must use the following IF...THEN...ELSE statement
-      IF UNSIGNED ((dealTo & dealToCardSlot) = DealEnableTresh(i) AND deal = '1') THEN
+      IF UNSIGNED (dealTo & dealToCardSlot) = DealEnableTresh(i) AND deal = '1' THEN
          dealEnable(i) <= '1';
       ELSE
         dealEnable(i) <='0';
