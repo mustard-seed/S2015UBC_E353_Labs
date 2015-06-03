@@ -42,7 +42,7 @@ BEGIN
       --Sync. Reset
       IF reset = '1' THEN
           countSample <= "0000";
-          count := "0000";
+          -- count := "0000";
           --enableVar := '0';
       --Update output
       --Wrong: ELSIF ((enable /= enable'last_value) AND (enable = '1')) THEN
