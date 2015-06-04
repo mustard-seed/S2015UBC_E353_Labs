@@ -8,6 +8,16 @@
 -- This data path deals cards to the A.I. and the human player, compute each side's score, and send
 -- game status to the FSM. Each side holds up to 4 cards, and may issue "stand" signal during card dealing stage.
 -- 1) Card Dealing
+-- For each side, 4 instances of DealCard component deals and keeps trakc of the card in one unique slot-- Your Names:  Linqiao (James) Liu; Henry Hao Yan
+-- Your Student Numbers: 39140116; 59057159
+-- Your Lab Section:  L1B
+
+-- File Name: dataPath.vhd
+-- Purpose: Data Path of the Black Jack game. Controlled by FSM.vhd
+-- Details:
+-- This data path deals cards to the A.I. and the human player, compute each side's score, and send
+-- game status to the FSM. Each side holds up to 4 cards, and may issue "stand" signal during card dealing stage.
+-- 1) Card Dealing
 -- For each side, 4 instances of DealCard component deals and keeps trakc of the card in one unique slot
 -- A card is dealt to a hand's particular slot if the signal "enable" = '1', and "dealTo" with "dealToCardSlot"
 -- reaches the correpsonding combination. For example, if "enable" = 1, and ("dealTo" & "dealToCardSlot" = "000" 
@@ -22,14 +32,42 @@
 -- Recommended FSM Design. The FSM should have the following states:
 -- 1) Deal to A.I. 1 (Reset State)
 -- 2) Deal to Player 1
--- 3) Deal to Player 2
+-- 3) Deal to Player 2.
 ---4) Deal to Player 3
 -- 5) Deal to Player 4
 -- 6) Deal to A.I. 2
 -- 7) Deal to A.I. 3
 -- 8) Deal to A.I. 4
 -- 9) Display Winner
--- 10) End Game
+-- 10) End Game (Everything off)
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+-- A card is dealt to a hand's particular slot if the signal "enable" = '1', and "dealTo" with "dealToCardSlot"
+-- reaches the correpsonding combination. For example, if "enable" = 1, and ("dealTo" & "dealToCardSlot" = "000" 
+-- changes from "0" to "1" from the previous clock tick, then a random card would be issued to the A.I.'s hand 1.
+-- 2) Score computation
+-- Score computation for each side is done by separate combinational circuit called ScoreHand. Upon detecting change in the side's
+-- hand, the side's score is re-evaluated. Pleae note, contrary to the Lab instruction's requiremen to use ScoreHand
+-- to generate bust signals, we use auxillary circuits in dataPath to generate bust signals
+-- 3) Bust signal, stand signal
+-- Extra combination logics are appended to score computation instances to issue bust, stand, and win signals to the FSM.
+
+-- Recommended FSM Design. The FSM should have the following states:
+-- 1) Deal to A.I. 1 (Reset State)
+-- 2) Deal to Player 1
+-- 3) Deal to Player 2.
+---4) Deal to Player 3
+-- 5) Deal to Player 4
+-- 6) Deal to A.I. 2
+-- 7) Deal to A.I. 3
+-- 8) Deal to A.I. 4
+-- 9) Display Winner
+-- 10) End Game (Everything off)
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

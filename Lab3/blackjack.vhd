@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY BlackJack IS
         -- Do not modify this port list! 
@@ -26,8 +27,8 @@ ARCHITECTURE Behavioural OF BlackJack IS
 
 	COMPONENT Card7Seg IS
 	PORT(
-	   	card : IN  STD_LOGIC_VECTOR(3 DOWNTO 0); -- value of card
-	   	seg7 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)  -- 7-seg LED pattern
+	   	hex: OUT STD_LOGIC_VECTOR(6 downto 0);
+      input: IN UNSIGNED (3 downto 0)
 	);
 	END COMPONENT;
 
@@ -76,9 +77,56 @@ ARCHITECTURE Behavioural OF BlackJack IS
 	);
 	END COMPONENT;
 
+  SIGNAL pCards, dCards: STD_LOGIC_VECTOR (15 downto 0);
+  SIGNAL tempNext, tempRST: STD_LOGIC;
+  SIGNAL intDeal, intDealTo, intDStands, intPWins, intDWins, intPBust, intDBust, intPStands: STD_LOGIC;
+  SIGNAL intDealToCardSlot: STD_LOGIC_VECTOR (1 downto 0);
 BEGIN
-        ---- Your code goes here!
-	----
+   --Player Card Display
+  HEXC3: Card7Seg PORT MAP(hex => HEX3, input => UNSIGNED(pCards(15 downto 12)) );
+  HEXC2: Card7Seg PORT MAP(hex => HEX2, input => UNSIGNED(pCards(11 downto 8)) );
+  HEXC1: Card7Seg PORT MAP(hex => HEX1, input => UNSIGNED(pCards(7 downto 4)) );
+  HEXC0: Card7Seg PORT MAP(hex => HEX0, input => UNSIGNED(pCards(3 downto 0)) );
+  
+   --Dealer Card Display
+  HEXC7: Card7Seg PORT MAP(hex => HEX7, input => UNSIGNED(dCards(15 downto 12)) );
+  HEXC6: Card7Seg PORT MAP(hex => HEX6, input => UNSIGNED(dCards(11 downto 8)) );
+  HEXC5: Card7Seg PORT MAP(hex => HEX5, input => UNSIGNED(dCards(7 downto 4)) );
+  HEXC4: Card7Seg PORT MAP(hex => HEX4, input => UNSIGNED(dCards(3 downto 0)) );
+  
+  DATA_PATH: DataPath 
+	PORT MAP(
+		clock => clock_50, reset => tempRST, 
+		deal => intDeal, dealTo => intDealTo, dealToCardSlot => intDealToCardSlot,
+		playerCards => pCards,	dealerCards => dCards,
+		dealerStands => intDStands,
+		playerWins => intPWins,
+		dealerWins => intDWins,
+		playerBust => intPBust,
+		dealerBust => intDBust
+	);
+	
+	tempNext <= not KEY(0);
+	tempRST <= not KEY(3);
+	
+	intPStands <= SW(0);
+	
+	FSM_COMP: FSM 
+	PORT MAP(
+		clock => clock_50, reset => tempRST,
+		nextStep  => tempNext,
+		playerStands => intPStands,
+		dealerStands => intDStands,
+		playerWins => intPWins,
+		dealerWins => intDWins,
+		playerBust => intPBust,
+		dealerBust => intDBust,
+    deal => intDeal,                                       
+		dealTo => intDealTo,
+		dealToCardSlot => intDealToCardSlot,
+		redLEDs => LEDR,
+		greenLEDs => LEDG
+	);
 	
 END Behavioural;
 

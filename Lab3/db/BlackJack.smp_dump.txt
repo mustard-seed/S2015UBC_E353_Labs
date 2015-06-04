@@ -1,0 +1,14 @@
+
+State Machine - |BlackJack|FSM:FSM_COMP|state_curr
+Name state_curr.DEALA_1 state_curr.OVER state_curr.WIN state_curr.DEALP_4 state_curr.DEALP_3 state_curr.DEALP_2 state_curr.DEALP_1 state_curr.DEALA_4 state_curr.DEALA_3 state_curr.DEALA_2 state_curr.RESET_S 
+state_curr.RESET_S 0 0 0 0 0 0 0 0 0 0 0 
+state_curr.DEALA_2 0 0 0 0 0 0 0 0 0 1 1 
+state_curr.DEALA_3 0 0 0 0 0 0 0 0 1 0 1 
+state_curr.DEALA_4 0 0 0 0 0 0 0 1 0 0 1 
+state_curr.DEALP_1 0 0 0 0 0 0 1 0 0 0 1 
+state_curr.DEALP_2 0 0 0 0 0 1 0 0 0 0 1 
+state_curr.DEALP_3 0 0 0 0 1 0 0 0 0 0 1 
+state_curr.DEALP_4 0 0 0 1 0 0 0 0 0 0 1 
+state_curr.WIN 0 0 1 0 0 0 0 0 0 0 1 
+state_curr.OVER 0 1 0 0 0 0 0 0 0 0 1 
+state_curr.DEALA_1 1 0 0 0 0 0 0 0 0 0 1 
