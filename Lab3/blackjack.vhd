@@ -9,7 +9,7 @@ ENTITY BlackJack IS
 		SW   : in  std_logic_vector(0 downto 0);  -- SW(0) = player stands
 		KEY  : in  std_logic_vector(3 downto 0);  -- KEY(3) reset, KEY(0) advance
 		LEDR : out std_logic_vector(17 downto 0); -- red LEDs: dealer wins
-		LEDG : out std_logic_vector(7 downto 0);  -- green LEDs: player wins
+		LEDG : out std_logic_vector(8 downto 0);  -- green LEDs: player wins
 
 		HEX7 : out std_logic_vector(6 downto 0);  -- dealer, fourth card
 		HEX6 : out std_logic_vector(6 downto 0);  -- dealer, third card
@@ -110,6 +110,7 @@ BEGIN
 	tempRST <= not KEY(3);
 	
 	intPStands <= SW(0);
+	LEDG(8) <= not KEY(0);
 	
 	FSM_COMP: FSM 
 	PORT MAP(
@@ -125,8 +126,7 @@ BEGIN
 		dealTo => intDealTo,
 		dealToCardSlot => intDealToCardSlot,
 		redLEDs => LEDR,
-		greenLEDs => LEDG
-	);
+		greenLEDs => LEDG(7 downto 0));
 	
 END Behavioural;
 
