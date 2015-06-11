@@ -14,27 +14,30 @@ END ENTITY;
 
 ARCHITECTURE rtl OF drawLineTB IS
   COMPONENT drawLine IS PORT (
-    x0_in, y0_in, x1_in, y1_in: IN STD_LOGIC_VECTOR (7 downto 0);
-    load_coord, err_sel, clock, plot_sel: IN STD_LOGIC;
-    x_out, y_out: OUT STD_LOGIC_VECTOR (7 downto 0);
-    done, plot: OUT STD_LOGIC);
-  END COMPONENT;
+   x0_in, x1_in: IN STD_LOGIC_VECTOR (7 downto 0);
+y0_in, y1_in: IN STD_LOGIC_VECTOR (6 downto 0);
+load_coord, err_sel, clock, plot_sel, reset: IN STD_LOGIC;
+x_out: OUT STD_LOGIC_VECTOR (7 downto 0);
+y_out: OUT STD_LOGIC_VECTOR (6 downto 0);
+done, plot: OUT STD_LOGIC);
+END COMPONENT;
   
-  SIGNAL x0, y0, x1, y1, x_out, y_out: STD_LOGIC_VECTOR (7 downto 0);
-  SIGNAL load, err_sel, plot_sel, done, plot_out: STD_LOGIC;
+  SIGNAL x0, x1, x_out: STD_LOGIC_VECTOR (7 downto 0);
+  SIGNAL y0, y1, y_out: STD_LOGIC_VECTOR (6 downto 0);
+  SIGNAL load, err_sel, plot_sel, done, plot_out, reset: STD_LOGIC;
   SIGNAL clock :STD_LOGIC := '0';
   CONSTANT HALF_CLK :TIME := 5 ns;
 BEGIN
 DUT: drawLine PORT MAP (
   x0_in => x0, y0_in => y0, x1_in => x1, y1_in => y1,
   load_coord => load, err_sel => err_sel, clock => clock, 
-  plot_sel => plot_sel, x_out => x_out, y_out => y_out, done => done,
+  plot_sel => plot_sel, reset => reset, x_out => x_out, y_out => y_out, done => done,
   plot => plot_out);
 
-  x0 <= "00000000";
-  y0 <= "00000000";
-  x1 <= "11111111";
-  y1 <= "11111111";
+  x0 <= "01100000";
+  y0 <= "0111100";
+  x1 <= "00000000";
+  y1 <= "0000000";
   
   CLK: PROCESS
     BEGIN

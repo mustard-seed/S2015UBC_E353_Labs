@@ -1,0 +1,18 @@
+
+State Machine - |lab4|Circuit:circ|S
+Name S.L3 S.L2 S.L1 S.L0 S.F3 S.F2 S.F1 S.F0 S.R0 
+S.R0 0 0 0 0 0 0 0 0 0 
+S.F0 0 0 0 0 0 0 0 1 1 
+S.F1 0 0 0 0 0 0 1 0 1 
+S.F2 0 0 0 0 0 1 0 0 1 
+S.F3 0 0 0 0 1 0 0 0 1 
+S.L0 0 0 0 1 0 0 0 0 1 
+S.L1 0 0 1 0 0 0 0 0 1 
+S.L2 0 1 0 0 0 0 0 0 1 
+S.L3 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lab4|Circuit:circ|MS
+Name MS.DEBOUNCE MS.PRESSED MS.IDLE 
+MS.IDLE 0 0 0 
+MS.PRESSED 0 1 1 
+MS.DEBOUNCE 1 0 1 

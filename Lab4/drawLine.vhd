@@ -11,16 +11,19 @@ use ieee.numeric_std.all;
 
 
 ENTITY drawLine IS PORT (
-x0_in, y0_in, x1_in, y1_in: IN STD_LOGIC_VECTOR (7 downto 0);
-load_coord, err_sel, clock, plot_sel: IN STD_LOGIC;
-x_out, y_out: OUT STD_LOGIC_VECTOR (7 downto 0);
+x0_in, x1_in: IN STD_LOGIC_VECTOR (7 downto 0);
+y0_in, y1_in: IN STD_LOGIC_VECTOR (6 downto 0);
+load_coord, err_sel, clock, plot_sel, reset: IN STD_LOGIC;
+x_out: OUT STD_LOGIC_VECTOR (7 downto 0);
+y_out: OUT STD_LOGIC_VECTOR (6 downto 0);
 done, plot: OUT STD_LOGIC);
 END ENTITY;
 
 ARCHITECTURE behave OF drawLine IS
   -- Internal siganls
   -- Conv vales need to 8 downto 0, to take care of the sign bit
-  SIGNAL x0_conv, y0_conv, x1_conv, y1_conv: UNSIGNED (8 downto 0);
+  SIGNAL x0_conv, x1_conv: UNSIGNED (8 downto 0);
+  SIGNAL y0_conv, y1_conv: UNSIGNED (7 downto 0);
   SIGNAL x0_int, y0_int, x1_int, y1_int: INTEGER;
   SIGNAL error, e2: INTEGER;
   SIGNAL sx, sy, x_int, y_int, dx, dy: INTEGER;
@@ -43,22 +46,45 @@ BEGIN
       ELSE x1_conv <= '0' & unsigned(x1_in);
     END IF;
     
-    IF (UNSIGNED(y0_in) < x"00") THEN y0_conv <= '0' & x"00";
-      ELSIF (UNSIGNED(y0_in) > Y_ULIM) THEN  y0_conv <= '0' & Y_ULIM;
+    IF (UNSIGNED(y0_in) < x"00" ) THEN y0_conv <= x"00";
+      ELSIF (UNSIGNED(y0_in) > Y_ULIM (6 downto 0)) THEN  y0_conv <= '0' & Y_ULIM (6 downto 0);
       ELSE y0_conv <= '0' & unsigned(y0_in);
     END IF;
     
-    IF (UNSIGNED(y1_in) < x"00") THEN y1_conv <= '0' & x"00";
-      ELSIF (UNSIGNED(y1_in) > Y_ULIM) THEN  y1_conv <= '0' & Y_ULIM;
+    IF (UNSIGNED(y1_in) < x"00") THEN y1_conv <= x"00";
+      ELSIF (UNSIGNED(y1_in) > Y_ULIM (6 downto 0)) THEN  y1_conv <= '0' & Y_ULIM (6 downto 0);
       ELSE y1_conv <= '0' & unsigned(y1_in);
     END IF;
   END PROCESS;
   
   --1. Step 1 of line drawing loading in new coordinates and cacluated 
-  --   necessary paramteres. Please activate load_coord signal.
-  LOAD: PROCESS (clock)
+  --   necessary paramteres. Please activate load_coord signal or reset signal.
+  LOAD: PROCESS (clock, reset)
   BEGIN
-    IF rising_edge(clock) AND load_coord = '1' THEN
+	 IF (reset = '1') THEN
+		x0_int <= to_integer(x0_conv);
+      x1_int <= to_integer(x1_conv);
+      y0_int <= to_integer(y0_conv);
+      y1_int <= to_integer(y1_conv);
+      -- Compute dx and sx
+      CASE x1_conv > x0_conv IS
+        WHEN TRUE => 
+          dx <= to_integer(x1_conv) - to_integer(x0_conv);
+          sx <= 1;
+        WHEN OTHERS => 
+          dx <= to_integer(x0_conv) - to_integer(x1_conv);
+          sx <= -1;
+      END CASE; 
+       -- Compute dy
+      CASE y1_conv > y0_conv IS
+        WHEN TRUE => 
+          dy <= to_integer(y1_conv) - to_integer(y0_conv);
+          sy <= 1;
+        WHEN OTHERS => 
+          dy <= to_integer(y0_conv) - to_integer(y1_conv);
+          sy <= -1;
+      END CASE;
+    ELSIF (rising_edge(clock) AND load_coord = '1') THEN
       x0_int <= to_integer(x0_conv);
       x1_int <= to_integer(x1_conv);
       y0_int <= to_integer(y0_conv);
@@ -128,7 +154,7 @@ END PROCESS;
  plot <= plot_sel;
  PROCESS (x_int, y_int, x1_int, y1_int)
  BEGIN
-   IF x_int >= x1_int AND y_int >= y1_int THEN
+   IF x_int = x1_int AND y_int = y1_int THEN
      done <= '1';
     ELSE
       done <= '0';
